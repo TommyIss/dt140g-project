@@ -1,0 +1,64 @@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; // use same layout as others
+    ViewBag.Title = "Assignments";
+
+}
+
+
+
+<style>
+
+    #chartdiv {
+        width: 100%;
+        height: 600px;
+    }
+
+    #options {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        justify-content: flex-end;
+    }
+
+    #todayBtn {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        background-color: aqua;
+        color: black;
+        border-radius: 5px;
+    }
+
+     #todayBtn:hover {
+        background-color: lightblue;
+     }
+</style>
+
+
+
+<div class="d-flex flex-column w-100 p-3 mb-5">
+    <h3 class="h-auto">Assignments</h3>
+    <div id="options">
+        <label for="viewUnit">View Mode:</label>
+        <select name="viewUnit" id="viewUnit">
+            <option value="month">Year</option>
+            <option value="week">Month</option>
+            <option value="day">Week</option>
+        </select>
+
+        <button id="todayBtn" class="h-auto">Today</button>
+    </div>
+    <div id="chartdiv"></div>
+</div>
+@section scripts {
+
+    <!-- Resources -->
+    <script src="//cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/plugins/colorPicker.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/gantt.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+    <script src="~/Scripts/assignments.js?@Helper.GetVersion()"></script>
+}
