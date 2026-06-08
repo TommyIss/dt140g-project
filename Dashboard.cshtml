@@ -1,0 +1,47 @@
+<!-- Expiringscontracts -->
+<div class="box w-100 mb-1">
+    <div class="m-content">
+        <div class="m-portlet p-4">
+            <h3 class="h-auto mb-4">Expiring Contracts</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Customer</th>
+                        <th>Consultants</th>
+                        <th>Enddate</th>
+                    </tr>
+                </thead>
+                <tbody id="expiring-contracts-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Forecast -->
+<div class="box w-100">
+    <div class="m-content">
+        <div class="m-portlet">
+
+            <!-- Revenue Summary -->
+            <div class="revenue-summary">
+                <div>Current Year: <span id="selectedYear"></span></div>
+                <div>Revenue YTD: <span id="revenue-ytd">0</span></div>
+                <div>Revenue Forecast: <span id="revenue-forecast">0</span></div>
+            </div>
+
+            <!-- Chart -->
+            <div style="width: 90%; margin: 40px auto;">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/dashboard.js?@Helper.GetVersion()"></script>
+    <script src="~/Scripts/budgetforecast.js?@Helper.GetVersion()"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/Scripts/assignments.js?@Helper.GetVersion()"></script>
+}
